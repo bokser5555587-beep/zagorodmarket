@@ -597,7 +597,27 @@ footer{background:#040b0e;padding:64px 0 32px;color:rgba(255,255,255,.5)}
 .gal-caption{padding:18px}
 .gal-h{font-size:15px;font-weight:900;color:var(--ink);margin-bottom:5px}
 .gal-sub{font-size:12px;color:var(--mu);font-weight:500}
-@media(max-width:760px){.gal-grid{grid-template-columns:1fr}}
+
+/* ДО / ПОСЛЕ */
+.before-after-section{margin-top:56px}
+.ba-title{font-size:22px;font-weight:900;color:var(--ink);margin-bottom:6px;text-align:center}
+.ba-sub{font-size:14px;color:var(--sub);text-align:center;margin-bottom:32px;font-weight:500}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ba-pair{background:var(--card);border-radius:20px;overflow:hidden;border:1px solid var(--ln);box-shadow:var(--sh)}
+.ba-imgs{display:grid;grid-template-columns:1fr 4px 1fr;gap:0;align-items:stretch}
+.ba-side{position:relative;overflow:hidden}
+.ba-side img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .4s}
+.ba-pair:hover .ba-side img{transform:scale(1.04)}
+.ba-label{position:absolute;top:10px;left:10px;font-size:11px;font-weight:900;padding:5px 12px;border-radius:50px;letter-spacing:.5px;text-transform:uppercase;z-index:2}
+.ba-label.before{background:rgba(220,38,38,.85);color:#fff}
+.ba-label.after{background:rgba(5,150,105,.85);color:#fff}
+.ba-divider{background:#fff;position:relative;display:flex;align-items:center;justify-content:center;z-index:3}
+.ba-divider::after{content:'↔';background:#fff;color:var(--ink);font-size:12px;font-weight:900;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2);position:absolute;top:50%;transform:translateY(-50%)}
+.ba-info{padding:16px 20px;border-top:1px solid var(--ln)}
+.ba-loc{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.ba-det{font-size:12px;color:var(--sub);font-weight:500}
+.ba-result{display:inline-block;margin-top:8px;font-size:11px;font-weight:900;background:var(--g4);color:var(--g2);padding:4px 12px;border-radius:50px;border:1px solid #a7f3d0}
+@media(max-width:760px){.ba-grid{grid-template-columns:1fr}.gal-grid{grid-template-columns:1fr}}
 
 /* RАССРОЧКА BLOCK */
 .inst-sec{background:var(--g4);border-top:2px solid #a7f3d0;border-bottom:2px solid #a7f3d0;padding:56px 0}
@@ -1324,13 +1344,144 @@ footer{background:#040b0e;padding:64px 0 32px;color:rgba(255,255,255,.5)}
     <span class="stag">3 000+ проектов</span>
     <h2 class="sh">Галерея выполненных работ</h2>
     <p class="ssub">Смотрите, как аккуратно мы работаем на реальных участках. Каждый монтаж — по технологии, с документами.</p>
+
+    <!-- ЭТАПЫ РАБОТ -->
     <div class="gal-grid">
-      <div class="gal-card sr"><img class="gal-img" src="https://images.unsplash.com/photo-1579487785973-74d2ca7ab4eb?auto=format&fit=crop&w=600&q=80" alt="Подготовка котлована"><div class="gal-caption"><div class="gal-h">Подготовка котлована</div><div class="gal-sub">📍 Ленинградская область, Всеволожск</div></div></div>
-      <div class="gal-card sr d1"><img class="gal-img" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80" alt="Монтаж труб"><div class="gal-caption"><div class="gal-h">Монтаж магистрали</div><div class="gal-sub">📍 Московская область, Истра</div></div></div>
-      <div class="gal-card sr d2"><img class="gal-img" src="https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=600&q=80" alt="Финальный монтаж"><div class="gal-caption"><div class="gal-h">Финальная засыпка и сдача</div><div class="gal-sub">📍 Санкт-Петербург, Парголово</div></div></div>
+      <!-- 1. Копка котлована — реальное фото ямы под септик -->
+      <div class="gal-card sr">
+        <img class="gal-img" src="https://chistovod.by/kotlovan-dlya-septika.jpg" alt="Копка котлована под септик" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=600&q=80'">
+        <div class="gal-caption"><div class="gal-h">🚜 Копка котлована</div><div class="gal-sub">📍 Всеволожск, Ленобласть</div></div>
+      </div>
+      <!-- 2. Установка септика в яму — реальное фото опускания -->
+      <div class="gal-card sr d1">
+        <img class="gal-img" src="https://chistovod.by/ustanovka-septika-v-yamu.jpg" alt="Установка септика в котлован" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=600&q=80'">
+        <div class="gal-caption"><div class="gal-h">⬇️ Установка в котлован</div><div class="gal-sub">📍 Гатчина, Ленобласть</div></div>
+      </div>
+      <!-- 3. Обсыпка песком — реальное фото засыпки -->
+      <div class="gal-card sr d2">
+        <img class="gal-img" src="https://chistovod.by/obsipka-septika.jpg" alt="Обсыпка септика песком" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=600&q=80'">
+        <div class="gal-caption"><div class="gal-h">🧱 Обсыпка и трубы</div><div class="gal-sub">📍 Парголово, СПб</div></div>
+      </div>
+      <!-- 4. Электрика — реальное фото подключения компрессора септика -->
+      <div class="gal-card sr">
+        <img class="gal-img" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf0VPr2nIQyJOnOODCEbCep4crxj1s0CKTzBRJLESzdkGfgOg9aS8LnYeG_1h9MOjfcsCvw4obvCTBaA2s-0Fal1Js01uHWQtlEagdiy4Gs8_gaQBHpbIaUjwszD3Dsk2q02s_6a6-UyUvBWICyVXRz2Aw?key=jUL3jETxjeT7ywVc-dPKkA" alt="Подключение компрессора септика электрика" onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80'">
+        <div class="gal-caption"><div class="gal-h">⚡ Электрика и запуск</div><div class="gal-sub">📍 Истра, Московская обл.</div></div>
+      </div>
+      <!-- 5. Финальная засыпка — готовый септик на участке -->
+      <div class="gal-card sr d1">
+        <img class="gal-img" src="https://chistovod.by/septik-usnovlen-na-uchastke.jpg" alt="Финальная засыпка септика" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=600&q=80'">
+        <div class="gal-caption"><div class="gal-h">✅ Финальная засыпка</div><div class="gal-sub">📍 Мурино, Ленобласть</div></div>
+      </div>
+      <!-- 6. Сдача объекта — участок после завершения монтажа -->
+      <div class="gal-card sr d2">
+        <img class="gal-img" src="https://chistovod.by/septik-na-uchastke-gotov.jpg" alt="Септик установлен — сдача объекта" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=600&q=80'">
+        <div class="gal-caption"><div class="gal-h">🤝 Сдача объекта</div><div class="gal-sub">📍 Выборг, Ленобласть</div></div>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:30px">
-      <a href="https://t.me/bokser5" target="_blank" class="btn btn-tg">📸 Больше фото в нашем Telegram-канале</a>
+
+    <!-- ДО / ПОСЛЕ -->
+    <div class="before-after-section sr">
+      <div class="ba-title">До и После — реальные объекты наших клиентов</div>
+      <div class="ba-sub">Слева — как было при приезде бригады. Справа — результат за 1 рабочий день.</div>
+      <div class="ba-grid">
+
+        <div class="ba-pair">
+          <div class="ba-imgs">
+            <div class="ba-side">
+              <span class="ba-label before">ДО</span>
+              <img src="https://septik-moscow.ru/wp-content/uploads/2024/04/g.-moskva-poselenie-pervomajskoe-derevnja-fominskoe-4-300x225.jpg"
+                onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=400&q=80'"
+                alt="До монтажа — котлован под септик">
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-side">
+              <span class="ba-label after">ПОСЛЕ</span>
+              <img src="https://septik-moscow.ru/wp-content/uploads/2024/04/gorodskoj-okrug-solnechnogorsk-snt-maslovo-5-300x225.jpg"
+                onerror="this.src='https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=400&q=80'"
+                alt="После монтажа — чистый аккуратный участок">
+            </div>
+          </div>
+          <div class="ba-info">
+            <div class="ba-loc">📍 Всеволожск, Ленобласть · Гринсток 2,0</div>
+            <div class="ba-det">Семья 3 человека, ПМЖ, суглинок. Монтаж под ключ за 1 день.</div>
+            <div class="ba-result">✓ Принято клиентом · 45 700 ₽ всё включено</div>
+          </div>
+        </div>
+
+        <div class="ba-pair">
+          <div class="ba-imgs">
+            <div class="ba-side">
+              <span class="ba-label before">ДО</span>
+              <img src="https://septik-moscow.ru/wp-content/uploads/2024/04/g.-moskva-poselenie-kievskij-derevnja-shelomovo-snt-bekasovo-7-300x169.jpg"
+                onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356f12?auto=format&fit=crop&w=400&q=80'"
+                alt="До монтажа — яма под септик">
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-side">
+              <span class="ba-label after">ПОСЛЕ</span>
+              <img src="https://septik-moscow.ru/wp-content/uploads/2024/05/sergievo-posadskij-gorodskoj-okrug-derevnja-vorohobino-7-300x226.jpg"
+                onerror="this.src='https://images.unsplash.com/photo-1585504198199-20277593b94f?auto=format&fit=crop&w=400&q=80'"
+                alt="После — установленный и засыпанный септик">
+            </div>
+          </div>
+          <div class="ba-info">
+            <div class="ba-loc">📍 Гатчинский р-н · Юнилос Астра 5</div>
+            <div class="ba-det">Семья 4 человека, высокий УГВ, глина. Биостанция с очисткой 98%.</div>
+            <div class="ba-result">✓ Принято клиентом · 82 000 ₽ + монтаж</div>
+          </div>
+        </div>
+
+        <div class="ba-pair">
+          <div class="ba-imgs">
+            <div class="ba-side">
+              <span class="ba-label before">ДО</span>
+              <img src="https://septik-moscow.ru/wp-content/uploads/2024/04/gorodskoj-okrug-istra-kottedzhnyj-posjolok-snegiri-dachnoe-5-300x225.jpg"
+                onerror="this.src='https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=400&q=80'"
+                alt="До — монтаж трубопровода">
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-side">
+              <span class="ba-label after">ПОСЛЕ</span>
+              <img src="https://septik-moscow.ru/wp-content/uploads/2024/04/gorodskoj-okrug-pushkinskij-snt-zareche-300x220.jpg"
+                onerror="this.src='https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&w=400&q=80'"
+                alt="После — чисто, люк на уровне земли">
+            </div>
+          </div>
+          <div class="ba-info">
+            <div class="ba-loc">📍 Парголово, СПб · Гринсток PR 2,5</div>
+            <div class="ba-det">Дача 2 чел, периодическое проживание, высокий УГВ. Шеф-монтаж.</div>
+            <div class="ba-result">✓ Принято клиентом · 52 500 ₽ + шеф 10 000 ₽</div>
+          </div>
+        </div>
+
+        <div class="ba-pair">
+          <div class="ba-imgs">
+            <div class="ba-side">
+              <span class="ba-label before">ДО</span>
+              <img src="https://septik-moscow.ru/wp-content/uploads/2024/04/orehovo-zuevskij-gorodskoj-okrug-derevnja-alekseevskaja-5-300x225.jpg"
+                onerror="this.src='https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=400&q=80'"
+                alt="До монтажа — участок без канализации">
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-side">
+              <span class="ba-label after">ПОСЛЕ</span>
+              <img src="https://septik-moscow.ru/wp-content/uploads/2024/04/ramenskij-gorodskoj-okrug-rabochij-posjolok-ilinskij-300x217.jpg"
+                onerror="this.src='https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=400&q=80'"
+                alt="После — готовая автономная канализация">
+            </div>
+          </div>
+          <div class="ba-info">
+            <div class="ba-loc">📍 Истра, Московская обл. · Гринсток 3,0</div>
+            <div class="ba-det">Большая семья 5 человек + баня. Монтаж под ключ, 1 день.</div>
+            <div class="ba-result">✓ Принято клиентом · 55 000 ₽ всё включено</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://t.me/bokser5" target="_blank" class="btn btn-tg">📸 Больше фото и видео в нашем Telegram @bokser5</a>
     </div>
   </div>
 </section>
@@ -1341,7 +1492,7 @@ footer{background:#040b0e;padding:64px 0 32px;color:rgba(255,255,255,.5)}
     <span class="stag">Репутация с 2015 года</span>
     <h2 class="sh">3 000+ довольных клиентов</h2>
     <p class="ssub" style="margin-bottom:24px">Читайте реальные отзывы на Яндекс.Картах — мы ничего не скрываем.</p>
-    <a href="https://yandex.ru/maps/org/zagorodmarket" target="_blank" rel="noopener" class="ya-rating-link sr">
+    <a href="https://yandex.ru/maps/?text=ЗагородМаркет+септики+СПб" target="_blank" rel="noopener" class="ya-rating-link sr">
       <div class="ya-rating-inner">
         <img src="https://yastatic.net/s3/web4static/_/v2/ru/ya-favicon.svg" width="22" height="22" alt="Яндекс" style="flex-shrink:0">
         <div>
@@ -1386,7 +1537,7 @@ footer{background:#040b0e;padding:64px 0 32px;color:rgba(255,255,255,.5)}
       </div>
     </div>
     <div style="text-align:center;margin-top:32px">
-      <a href="https://yandex.ru/maps/org/zagorodmarket" target="_blank" class="btn btn-outline">Все отзывы на Яндекс.Картах →</a>
+      <a href="https://yandex.ru/maps/?text=ЗагородМаркет+септики+СПб" target="_blank" class="btn btn-outline">Все отзывы на Яндекс.Картах →</a>
     </div>
   </div>
 </section>
